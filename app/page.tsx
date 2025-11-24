@@ -487,8 +487,6 @@ function PricingSection() {
   );
 }
 
-
-
 // Testimonials Section Component
 function TestimonialsSection() {
   const testimonials: Testimonial[] = [
