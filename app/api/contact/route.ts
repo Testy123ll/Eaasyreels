@@ -7,6 +7,10 @@ async function sendEmail(data: { name: string; brand: string; budget: number; pr
   const emailUser = process.env.EMAIL_USER || 'Ogundipeayomide70@gmail.com';
   const emailPass = process.env.EMAIL_PASSWORD;
   
+  console.log('📧 Environment variables check:');
+  console.log('EMAIL_USER:', emailUser ? 'Set' : 'Not set');
+  console.log('EMAIL_PASSWORD:', emailPass ? 'Set' : 'Not set');
+  
   // Don't proceed if no password is set
   if (!emailPass) {
     console.error('📧 Email password not configured in environment variables');
@@ -27,6 +31,7 @@ async function sendEmail(data: { name: string; brand: string; budget: number; pr
   // Verify transporter configuration
   try {
     await transporter.verify();
+    console.log('📧 Email transporter verified successfully');
   } catch (error) {
     console.error('📧 Email transporter verification failed:', error);
     return { success: false, error: 'Email service configuration error' };
@@ -77,6 +82,9 @@ This message was sent from the contact form on your EASYREELS portfolio website.
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    
+    // Log incoming request for debugging
+    console.log('📧 Contact form submission received:', body);
     
     // Validate required fields
     const { name, brand, budget, projectType } = body;
