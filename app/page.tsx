@@ -216,9 +216,10 @@ function HeroSection({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void;
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <button 
-            className="border-2 border-neon-pink px-8 py-4 rounded-full text-lg font-bold hover:bg-neon-pink hover:text-black transition-all duration-300 mr-4"
+            className="border-2 border-neon-pink px-8 py-4 rounded-full text-lg font-bold hover:bg-neon-pink hover:text-black transition-all duration-300 w-full sm:w-auto"
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
@@ -226,7 +227,7 @@ function HeroSection({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void;
           </button>
           <button 
             onClick={scrollToContact}
-            className="bg-white text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-200 transition-all duration-300"
+            className="bg-white text-black px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-200 transition-all duration-300 w-full sm:w-auto"
           >
             BOOK YOUR PROJECT
           </button>
@@ -740,7 +741,7 @@ function ContactSection() {
     },
     {
       question: "Can I request revisions?",
-      answer: "Yes, all packages include revision rounds. Essential package includes 1 revision, Premium includes 1 revision, and Wedding package includes 2 revisions. Additional revisions are available at ₦25,000 per round."
+      answer: "Yes, all packages include revision rounds. Essential package includes 1 revision, Premium includes 1 revision, and Wedding package includes 2 revisions. Additional revisions are available for a nominal fee."
     },
     {
       question: "What is your payment structure?",
@@ -757,6 +758,10 @@ function ContactSection() {
     {
       question: "What makes EASYREELS different from other videographers?",
       answer: "Our unique blend of technical expertise and creative storytelling sets us apart. We combine cinematic techniques with a deep understanding of brand messaging to create content that not only looks stunning but also drives results."
+    },
+    {
+      question: "Do you offer video editing services for footage not shot by you?",
+      answer: "Yes, we provide professional video editing services for footage shot by other videographers or clients. We can work with various file formats and help enhance your existing footage with our post-production expertise. Please contact us with details about your project for a custom quote."
     }
   ];
   
