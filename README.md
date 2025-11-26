@@ -1,36 +1,53 @@
-# EASYREELS Portfolio Website
+# EASYREELS Portfolio
 
-A high-impact, visually complex personal portfolio website for a professional Content Creator/Videographer built with Next.js, TypeScript, and Tailwind CSS.
+A high-impact, visually complex personal portfolio website for a professional Content Creator/Videographer.
 
 ## Features
 
-- **Motion-First UI**: Smooth animations and transitions using Framer Motion
-- **Dark Mode Native**: Deep blacks with neon accents for a tech-noir aesthetic
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Interactive Elements**: Custom cursor, hover effects, and animated components
-- **Performance Optimized**: Built with Next.js for optimal performance and SEO
-
-## Sections
-
-1. **Hero Section**: Full-screen video background with dynamic tagline
-2. **The Arsenal**: Bento grid layout showcasing skills and capabilities
-3. **Selected Works**: Portfolio showcase with project details
-4. **Package Pricing**: Tiered pricing cards with toggle switch
-5. **Social Proof**: Infinite horizontal scroll testimonials
-6. **The Gear Locker**: Interactive equipment blueprint
-7. **Contact & Booking**: Terminal-style contact form
-
-## Technologies Used
-
-- [Next.js](https://nextjs.org/) - React framework for production
-- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion/) - Motion library for React
-- [GSAP](https://greensock.com/gsap/) - Animation library
+- Responsive design for all device sizes
+- Interactive elements with smooth animations
+- Instagram reel embeds in the portfolio section
+- Booking section with WhatsApp integration
+- FAQ accordion functionality
+- Contact form with email integration
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (version 18 or higher)
+- npm (comes with Node.js)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd easyreels-portfolio
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASSWORD=your-app-password
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
+
+### Development
+
+To run the development server:
 
 ```bash
 npm run dev
@@ -38,11 +55,29 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
+### Deployment
 
-To learn more about Next.js, take a look at the following resources:
+#### Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push your code to a GitHub repository
+2. Sign up or log in to [Vercel](https://vercel.com)
+3. Click "New Project" and import your GitHub repository
+4. Configure the project:
+   - Framework Preset: Next.js
+   - Root Directory: Leave as is
+   - Environment Variables: Add your EMAIL_USER and EMAIL_PASSWORD
+5. Click "Deploy"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The deployment will automatically build and deploy your site.
+
+## Built With
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Nodemailer](https://nodemailer.com/)
+
+## Contact
+
+For inquiries, please contact the site owner through the contact form on the website.

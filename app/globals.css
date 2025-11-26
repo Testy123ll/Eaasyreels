@@ -6,6 +6,7 @@
   --neon-blue: #00f3ff;
   --neon-green: #39ff14;
   --neon-pink: #ff00ff;
+  --neon-yellow: #ffff00;
 }
 
 @theme inline {
@@ -14,6 +15,7 @@
   --color-neon-blue: var(--neon-blue);
   --color-neon-green: var(--neon-green);
   --color-neon-pink: var(--neon-pink);
+  --color-neon-yellow: var(--neon-yellow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
