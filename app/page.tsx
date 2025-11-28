@@ -333,7 +333,7 @@ function PortfolioSection() {
       client: "Dave Ugbor", 
       role: "Colorist", 
       tech: "",
-      instagramUrl: "https://www.instagram.com/reel/DRAVk9SCD4-/?igsh=MTNwajR6Y3NpZTBrcw=="
+      instagramUrl: "https://www.instagram.com/reel/DOkrEp_DKj4/?igsh=YjRvc2tuYmg3dG96"
     },
   ];
   
@@ -395,7 +395,7 @@ function PortfolioSection() {
                   ) : index === 3 ? (
                     // Instagram Reel Embed for the fourth project
                     <iframe
-                      src="https://www.instagram.com/reel/DRAVk9SCD4-/embed"
+                      src="https://www.instagram.com/reel/DOkrEp_DKj4/embed"
                       className="w-full h-full rounded-lg"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -745,7 +745,7 @@ function ContactSection() {
     },
     {
       question: "What is your payment structure?",
-      answer: "We require a 50% deposit to secure your booking date, with the remaining balance due before final delivery. Payments can be made via bank transfer or direct deposit."
+      answer: "We require a 70% deposit to secure your booking date, with the remaining balance due before final delivery. Payments can be made via bank transfer or direct deposit."
     },
     {
       question: "Do you provide raw footage?",
