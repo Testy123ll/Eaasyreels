@@ -166,7 +166,7 @@ const WebGLBackground = () => {
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(texCoords), gl.STATIC_DRAW);
     
     // Render function
-    let startTime = Date.now();
+    const startTime = Date.now();
     const render = () => {
       resizeCanvas();
       

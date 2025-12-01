@@ -17,7 +17,7 @@ export default function NotFound() {
         </h1>
         <h2 className="text-3xl md:text-4xl font-bold mb-6">PAGE NOT FOUND</h2>
         <p className="text-xl text-gray-400 mb-8">
-          The reel you're looking for seems to have gone off-screen.
+          The reel you&apos;re looking for seems to have gone off-screen.
         </p>
         <Link href="/">
           <motion.button

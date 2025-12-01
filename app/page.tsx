@@ -1,8 +1,11 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
+import LogoImg from '../easyreel logo.png';
+import PortraitImg from '../easyreel pict.png';
 import WebGLBackground from '../components/WebGLBackground';
 import Lenis from 'lenis';
 
@@ -38,17 +41,10 @@ type Testimonial = {
 };
 
 export default function Home() {
-  const [isClient, setIsClient] = useState(false);
-  
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-  
   // Initialize Lenis smooth scrolling
   useEffect(() => {
-    if (!isClient) return;
+    if (typeof window === 'undefined') return;
     
-    // @ts-ignore
     const lenis = new Lenis();
     
     function raf(time: number) {
@@ -61,40 +57,7 @@ export default function Home() {
     return () => {
       lenis.destroy();
     };
-  }, [isClient]);
-  
-  if (!isClient) {
-    return (
-      <div className="min-h-screen bg-black text-white overflow-x-hidden">
-        {/* Hero Section */}
-        <div className="relative h-screen flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <div className="w-full h-full bg-gray-900 flex items-center justify-center">
-              <div className="text-center">
-                <h2 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-neon-blue to-neon-pink">
-                  LOADING SHOWREEL...
-                </h2>
-              </div>
-            </div>
-          </div>
-          
-          <div className="relative z-20 text-center px-4">
-            <h1 className="text-5xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-neon-blue via-neon-green to-neon-pink">
-              CAPTURING CHAOS
-            </h1>
-            <p className="text-xl md:text-3xl max-w-3xl mx-auto mb-8">
-              Visual Alchemy for Brands, Artists, and Events
-            </p>
-            <div>
-              <button className="border-2 border-neon-pink px-8 py-4 rounded-full text-lg font-bold">
-                VIEW SHOWREEL
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  }, []);
   
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
@@ -193,7 +156,12 @@ function HeroSection({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void;
       >
         <WebGLBackground />
       </div>
-      
+
+      <div className="absolute top-3 left-3 sm:top-6 sm:left-6 z-30 flex items-center gap-2 sm:gap-3">
+        <Image src={LogoImg} alt="EASYREELS logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-md" priority sizes="(max-width: 640px) 32px, 40px" />
+        <span className="hidden sm:inline text-base sm:text-lg font-semibold tracking-wide text-white">EASYREELS</span>
+      </div>
+
       {/* Hero Content */}
       <div className="relative z-20 text-center px-4">
         <motion.h1 
@@ -233,7 +201,14 @@ function HeroSection({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void;
           </button>
         </motion.div>
       </div>
-      
+
+      <div className="absolute bottom-24 right-8 z-30">
+        <div className="relative">
+          <div className="absolute inset-0 blur-xl opacity-40 bg-gradient-to-tr from-neon-pink via-neon-blue to-neon-green rounded-full" />
+          <Image src={PortraitImg} alt="Creator portrait" className="relative w-20 h-20 md:w-24 md:h-24 rounded-full ring-2 ring-neon-pink/60" priority sizes="(max-width: 768px) 80px, 96px" />
+        </div>
+      </div>
+
       {/* Scroll Indicator */}
       <motion.div 
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
@@ -361,13 +336,14 @@ function PortfolioSection() {
               transition={{ duration: 0.7 }}
             >
               <div className={`w-full md:w-1/2 ${index % 2 === 1 ? 'md:order-2' : ''}`}>
-                <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center border border-gray-700">
+                <div className="aspect-[9/16] bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center border border-gray-700">
                   {index === 0 ? (
                     // Instagram Reel Embed for the first project
                     <iframe
                       src="https://www.instagram.com/reel/DM97D0vohh-/embed"
                       className="w-full h-full rounded-lg"
                       frameBorder="0"
+                      scrolling="no"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       title="Brand Promotion Reel"
@@ -378,6 +354,7 @@ function PortfolioSection() {
                       src="https://www.instagram.com/reel/DLUk4Sgsgwa/embed"
                       className="w-full h-full rounded-lg"
                       frameBorder="0"
+                      scrolling="no"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       title="Wedding Shoot Reel"
@@ -388,6 +365,7 @@ function PortfolioSection() {
                       src="https://www.instagram.com/reel/DRAVk9SCD4-/embed"
                       className="w-full h-full rounded-lg"
                       frameBorder="0"
+                      scrolling="no"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       title="Event Recap Reel"
@@ -398,6 +376,7 @@ function PortfolioSection() {
                       src="https://www.instagram.com/reel/DOkrEp_DKj4/embed"
                       className="w-full h-full rounded-lg"
                       frameBorder="0"
+                      scrolling="no"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                       title="Music Video Reel"
@@ -666,7 +645,7 @@ function TestimonialsSection() {
               </div>
               
               {/* Testimonial Text */}
-              <p className="text-gray-300 italic mb-6">"{testimonial.quote}"</p>
+              <p className="text-gray-300 italic mb-6">&quot;{testimonial.quote}&quot;</p>
               
               {/* Author Info */}
               <div className="flex items-center">
@@ -753,7 +732,7 @@ function ContactSection() {
     },
     {
       question: "How do we collaborate during the project?",
-      answer: "We maintain constant communication throughout the project. You'll have a dedicated project manager, regular updates via WhatsApp or email, and milestone reviews to ensure we're aligned with your vision."
+      answer: "We maintain constant communication throughout the project. You&apos;ll have a dedicated project manager, regular updates via WhatsApp or email, and milestone reviews to ensure we&apos;re aligned with your vision."
     },
     {
       question: "What makes EASYREELS different from other videographers?",
@@ -838,7 +817,7 @@ function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Ready to bring your vision to life? Select your package and let's create something extraordinary together.
+          Ready to bring your vision to life? Select your package and let&apos;s create something extraordinary together.
         </motion.p>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
@@ -933,7 +912,7 @@ function ContactSection() {
             
             <div className="space-y-6">
               <p className="text-gray-300">
-                Have unique requirements or a larger project? Let's discuss a custom package tailored to your specific needs.
+                Have unique requirements or a larger project? Let&apos;s discuss a custom package tailored to your specific needs.
               </p>
               
               <div className="space-y-4">
