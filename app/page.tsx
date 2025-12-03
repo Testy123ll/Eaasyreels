@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import LogoImg from '../easyreel logo.png';
-import PortraitImg from '../easyreel pict.png';
 import WebGLBackground from '../components/WebGLBackground';
 import Lenis from 'lenis';
 
@@ -158,8 +157,8 @@ function HeroSection({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void;
       </div>
 
       <div className="absolute top-3 left-3 sm:top-6 sm:left-6 z-30 flex items-center gap-2 sm:gap-3">
-        <Image src={LogoImg} alt="EASYREELS logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-md" priority sizes="(max-width: 640px) 32px, 40px" />
-        <span className="hidden sm:inline text-base sm:text-lg font-semibold tracking-wide text-white">EASYREELS</span>
+        <Image src={LogoImg} alt="EASYREELS logo" className="w-12 h-12 sm:w-14 sm:h-14 rounded-md" priority sizes="(max-width: 640px) 48px, 56px" />
+        <span className="hidden sm:inline text-lg sm:text-xl font-semibold tracking-wide text-white">EASYREELS</span>
       </div>
 
       {/* Hero Content */}
@@ -202,12 +201,7 @@ function HeroSection({ onMouseEnter, onMouseLeave }: { onMouseEnter: () => void;
         </motion.div>
       </div>
 
-      <div className="absolute bottom-24 right-8 z-30">
-        <div className="relative">
-          <div className="absolute inset-0 blur-xl opacity-40 bg-gradient-to-tr from-neon-pink via-neon-blue to-neon-green rounded-full" />
-          <Image src={PortraitImg} alt="Creator portrait" className="relative w-20 h-20 md:w-24 md:h-24 rounded-full ring-2 ring-neon-pink/60" priority sizes="(max-width: 768px) 80px, 96px" />
-        </div>
-      </div>
+      
 
       {/* Scroll Indicator */}
       <motion.div 
@@ -568,19 +562,19 @@ function TestimonialsSection() {
       id: 1, 
       quote: "Working with EASYREELS transformed our brand story. The visual narrative captured our essence perfectly.", 
       author: "Mikeage", 
-      role: "Founder, Efe-macroc" 
+      role: "Director, Cinematographer, Colorist" 
     },
     { 
       id: 2, 
       quote: "The cinematography elevated our music video to another level. Truly exceptional creative vision.", 
       author: "Opadoja", 
-      role: "Artist, Macrocsession" 
+      role: " Director, Cinematography, " 
     },
     { 
       id: 3, 
       quote: "Professional, innovative, and deadline-oriented. Our event coverage exceeded expectations.", 
       author: "MIDE Media", 
-      role: "Production House" 
+      role: "Photography, Director, Cinematography" 
     },
     { 
       id: 4, 
@@ -592,13 +586,13 @@ function TestimonialsSection() {
       id: 5, 
       quote: "EASYREELS brought our vision to life with stunning visuals and flawless execution.", 
       author: "Ghosted Tife", 
-      role: "Artist Manager" 
+      role: "Artist,Music Producer, Audio Engineer" 
     },
     { 
       id: 6, 
       quote: "The production quality and creative direction exceeded our expectations. Highly recommended!", 
       author: "Beat Sultan", 
-      role: "Music Producer" 
+      role: "Music Producer, Project Manager, A&P Executive" 
     },
   ];
   
