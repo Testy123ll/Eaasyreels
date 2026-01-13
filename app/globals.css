@@ -3,28 +3,15 @@
 :root {
   --background: #050505;
   --foreground: #ffffff;
-  --neon-blue: #00f3ff;
-  --neon-green: #39ff14;
-  --neon-pink: #ff00ff;
-  --neon-yellow: #ffff00;
+  --accent: #3B82F6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-neon-blue: var(--neon-blue);
-  --color-neon-green: var(--neon-green);
-  --color-neon-pink: var(--neon-pink);
-  --color-neon-yellow: var(--neon-yellow);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #050505;
-    --foreground: #ffffff;
-  }
 }
 
 body {
@@ -32,58 +19,26 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   overflow-x: hidden;
+  cursor: none; /* Hide default cursor for custom one */
 }
 
-/* Custom Animations */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Lenis Smooth Scroll */
+html.lenis, html.lenis body {
+  height: auto;
 }
 
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marquee 20s linear infinite;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
 }
 
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* Custom Cursor */
-.custom-cursor {
-  width: 40px;
-  height: 40px;
-  border: 1px solid white;
-  border-radius: 50%;
-  position: fixed;
+.lenis.lenis-scrolling iframe {
   pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  mix-blend-mode: difference;
-}
-
-.cursor-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  white-space: nowrap;
 }
